@@ -1,7 +1,5 @@
 # terraform-aws-polkadot-network
 
-## Features
-
 This module sets up VPCs, DNS zones, and security groups for running validator nodes on polkadot.
 
 ## Terraform versions
@@ -10,15 +8,21 @@ For Terraform v0.12.0+
 
 ## Usage
 
-```
+```hcl-terraform
 module "this" {
-    source = "github.com/insight-infrastructure/terraform-aws-polkadot-network"
+  source = "github.com/insight-infrastructure/terraform-aws-polkadot-network"
+
+  all_enabled          = true
+  root_domain_name     = var.root_domain_name
+  create_bastion       = true
+  bucket_force_destroy = true
+  bucket_name          = "logs-xxxx"
 }
 ```
 
 ## Examples
 
-- [simple](https://github.com/insight-infrastructure/terraform-aws-polkadot-network/tree/master/examples/simple)
+- [simple](https://github.com/geometry-labs/terraform-aws-polkadot-network/tree/master/examples/simple)
 
 ## Known issues
 No issue is creating limit on this module.
@@ -96,7 +100,6 @@ No issue is creating limit on this module.
 | azs | n/a |
 | bastion\_security\_group\_id | #### SGs #### |
 | consul\_security\_group\_id | n/a |
-| hids\_security\_group\_id | n/a |
 | internal\_tld | n/a |
 | k8s\_security\_group\_id | n/a |
 | logging\_security\_group\_id | n/a |
@@ -114,11 +117,7 @@ No issue is creating limit on this module.
 
 ## Authors
 
-Module managed by [{{ cookiecutter.owner }}](github.com/{{ cookiecutter.owner }})
-
-## Credits
-
-- [Anton Babenko](https://github.com/antonbabenko)
+Module managed by [Geometry Labs](https://github.com/geometry-labs)
 
 ## License
 

@@ -55,3 +55,8 @@ module "hids_sg" {
   ingress_cidr_blocks = local.consul_enabled ? [module.vpc.vpc_cidr_block] : []
   ingress_rules       = local.consul_enabled ? ["consul-tcp", "consul-serf-wan-tcp", "consul-serf-wan-udp", "consul-serf-lan-tcp", "consul-serf-lan-udp", "consul-dns-tcp", "consul-dns-udp"] : []
 }
+
+output "hids_security_group_id" {
+  value = module.hids_sg.this_security_group_id
+}
+
