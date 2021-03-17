@@ -16,7 +16,7 @@ func TestAllEnabled(t *testing.T) {
 	terraformOptions := &terraform.Options{
 		TerraformDir: exampleFolder,
 		Vars: map[string]interface{}{
-			"root_domain_name": "insight-infra.net",
+			"root_domain_name": "geometry-ci.net",
 			"aws_region":       "us-east-1",
 		},
 	}

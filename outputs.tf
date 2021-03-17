@@ -24,10 +24,6 @@ output "consul_security_group_id" {
   value = module.consul_sg.this_security_group_id
 }
 
-output "hids_security_group_id" {
-  value = module.hids_sg.this_security_group_id
-}
-
 output "k8s_security_group_id" {
   value = module.k8s_sg.this_security_group_id
 }

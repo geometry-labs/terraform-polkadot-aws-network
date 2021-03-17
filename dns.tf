@@ -11,7 +11,7 @@ locals {
   public_domain = var.subdomain == "" ? join(".", [data.aws_region.current.name, local.public_root]) : join(".", [var.subdomain, local.public_root])
 }
 
-data cloudflare_zones "this" {
+data "cloudflare_zones" "this" {
   count = local.cloudflare_enable ? 1 : 0
   filter {
     name = var.root_domain_name
