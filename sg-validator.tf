@@ -10,43 +10,6 @@ module "validator_sg" {
     Name : var.validator_sg_name
   }, var.tags)
 
-  //  ingress_with_source_security_group_id = concat(local.monitoring_enabled ? concat([
-  //      # static rules
-  //      {
-  //        from_port                = 9100
-  //        to_port                  = 9100
-  //        protocol                 = "tcp"
-  //        description              = "Node exporter"
-  //        source_security_group_id = module.monitoring_sg.this_security_group_id
-  //      },
-  //      {
-  //        from_port                = 9323
-  //        to_port                  = 9323
-  //        protocol                 = "tcp"
-  //        description              = "Docker Prometheus Metrics under /metrics endpoint"
-  //        source_security_group_id = module.monitoring_sg.this_security_group_id
-  //      }], [
-  //      # dynamic rules based on Polkadot network
-  //      for network in var.network_settings : {
-  //        from_port                = network["prometheus"]
-  //        to_port                  = network["prometheus"]
-  //        protocol                 = "tcp"
-  //        description              = "Client exporter - ${network["name"]}"
-  //        source_security_group_id = module.monitoring_sg.this_security_group_id
-  //      }
-  //    ]) : [])
-
-  //  ingress_cidr_blocks = local.consul_enabled ? [
-  //  module.vpc.vpc_cidr_block] : []
-  //  ingress_rules = local.consul_enabled ? [
-  //    "consul-tcp",
-  //    "consul-serf-wan-tcp",
-  //    "consul-serf-wan-udp",
-  //    "consul-serf-lan-tcp",
-  //    "consul-serf-lan-udp",
-  //    "consul-dns-tcp",
-  //  "consul-dns-udp"] : []
-
   ingress_with_cidr_blocks = concat(
     concat(
       # static rules
