@@ -1,40 +1,40 @@
 #####
 # DNS
 #####
-output "root_domain_name" {
-  value = var.root_domain_name
-}
+//output "root_domain_name" {
+//  value = var.root_domain_name
+//}
+//
+//output "internal_tld" {
+//  value = var.internal_tld
+//}
 
-output "internal_tld" {
-  value = var.internal_tld
-}
-
-output "public_regional_domain" {
-  value = local.create_public_regional_subdomain ? local.public_domain : ""
-}
+//output "public_regional_domain" {
+//  value = local.create_public_regional_subdomain ? local.public_domain : ""
+//}
 
 #####
 # SGs
 #####
-output "bastion_security_group_id" {
-  value = module.bastion_sg.this_security_group_id
-}
+//output "bastion_security_group_id" {
+//  value = module.bastion_sg.this_security_group_id
+//}
+//
+//output "consul_security_group_id" {
+//  value = module.consul_sg.this_security_group_id
+//}
+//
+//output "k8s_security_group_id" {
+//  value = module.k8s_sg.this_security_group_id
+//}
 
-output "consul_security_group_id" {
-  value = module.consul_sg.this_security_group_id
-}
-
-output "k8s_security_group_id" {
-  value = module.k8s_sg.this_security_group_id
-}
-
-output "logging_security_group_id" {
-  value = module.logging_sg.this_security_group_id
-}
-
-output "monitoring_security_group_id" {
-  value = module.monitoring_sg.this_security_group_id
-}
+//output "logging_security_group_id" {
+//  value = module.logging_sg.this_security_group_id
+//}
+//
+//output "monitoring_security_group_id" {
+//  value = module.monitoring_sg.this_security_group_id
+//}
 
 output "api_security_group_id" {
   value = module.api_node_sg.this_security_group_id
